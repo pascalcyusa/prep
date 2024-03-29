@@ -14,8 +14,9 @@ int main() {
     std::cout << "Size: " << myList->size() << std::endl;
     std::cout << "Head: " << myList->getHead() << std::endl;
     std::cout << "Tail:" << myList->getTail() << std::endl;
-    std::cout << "Node(s): ";
+    std::cout << "Node(s): [ ";
     myList->print();
+    std::cout << "]" << std::endl;
 
     // Append some values
     myList->append(5);

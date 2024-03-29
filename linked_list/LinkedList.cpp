@@ -47,9 +47,10 @@ bool LinkedList::insert(int value, int index) {}
 void LinkedList::print() {
     Node *temp = head;
     while (temp) {
-        std::cout << temp->value << std::endl;
+        std::cout << temp->value << " ";
         temp = temp->next;
     }
+    std::cout << std::endl;
 }
 
 int LinkedList::size() {
