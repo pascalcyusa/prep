@@ -17,6 +17,6 @@ int main(int argc, char *argv[]) {
     std::cout << myList->size() << std::endl;
     std::cout << myList->getHead() << std::endl;
     std::cout << myList->getTail() << std::endl;
-    myList->print();
+    //myList->print();
     return 0;
 }
