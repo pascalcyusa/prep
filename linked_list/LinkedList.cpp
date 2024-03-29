@@ -46,7 +46,7 @@ bool LinkedList::insert(int value, int index) {}
 
 void LinkedList::print() {
     Node *temp = head;
-    while (head) {
+    while (temp) {
         std::cout << temp->value << std::endl;
         temp = temp->next;
     }
