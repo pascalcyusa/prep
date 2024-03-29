@@ -30,13 +30,14 @@ LinkedList::~LinkedList() {
 
 void LinkedList::append(int value) {
     Node *newNode = new Node(value);
-    if (head == nullptr) {
+    if (length == 0) {
         head = newNode;
         tail = newNode;
     } else {
         tail->next = newNode;
         tail = newNode;
     }
+    length++;
 }
 
 void LinkedList::prepend(int value) {}
