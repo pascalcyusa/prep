@@ -50,7 +50,6 @@ void LinkedList::print() {
         std::cout << temp->value << " ";
         temp = temp->next;
     }
-    std::cout << std::endl;
 }
 
 int LinkedList::size() {
