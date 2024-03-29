@@ -28,7 +28,16 @@ LinkedList::~LinkedList() {
     }
 }
 
-void LinkedList::append(int value) {}
+void LinkedList::append(int value) {
+    Node *newNode = new Node(value);
+    if (head == nullptr) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        tail->next = newNode;
+        tail = newNode;
+    }
+}
 
 void LinkedList::prepend(int value) {}
 
