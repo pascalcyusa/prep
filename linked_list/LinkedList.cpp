@@ -29,8 +29,11 @@ LinkedList::~LinkedList() {
 }
 
 void LinkedList::append(int value) {}
+
 void LinkedList::prepend(int value) {}
+
 bool LinkedList::insert(int value, int index) {}
+
 void LinkedList::print() {
     Node *temp = head;
     while (head) {

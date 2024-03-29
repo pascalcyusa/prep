@@ -10,13 +10,17 @@
 #include "LinkedList.h"
 
 int main(int argc, char *argv[]) {
-    LinkedList *myList = new LinkedList(10);
-    // for (int i = 0; i < 10; i++) {
-    //     myList->append(i);
-    // }
+    LinkedList *myList = nullptr;
+    for (int i = 0; i < 10; i++) {
+        if (i == 0) {
+            myList = new LinkedList(i);
+        } else {
+            myList->append(i);
+        }
+    }
     std::cout << myList->size() << std::endl;
     std::cout << myList->getHead() << std::endl;
     std::cout << myList->getTail() << std::endl;
-    //myList->print();
+    myList->print();
     return 0;
 }
