@@ -19,6 +19,15 @@ LinkedList::LinkedList(int value) {
     length = 1;
 }
 
+LinkedList::~LinkedList() {
+    Node *temp = head;
+    while (head) {
+        head = head->next;
+        delete temp;
+        temp = head;
+    }
+}
+
 void LinkedList::append(int value) {}
 void LinkedList::prepend(int value) {}
 bool LinkedList::insert(int value, int index) {}

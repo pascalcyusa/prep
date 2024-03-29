@@ -23,6 +23,7 @@ class LinkedList {
 
    public:
     LinkedList(int value);
+    ~LinkedList();
     void append(int value);
     void prepend(int value);
     bool insert(int value, int index);
