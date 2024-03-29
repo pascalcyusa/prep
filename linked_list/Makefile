@@ -1,7 +1,7 @@
 ### Created by Jean Pascal Cyusa Shyaka on Mar 28th, 2024
 ### Makefile for LinkedList
 
-CXX      = clang++
+CXX      = g++
 CXXFLAGS = -Wall -Wextra -Wreturn-type -g
 LDFLAGS  = -g
 
