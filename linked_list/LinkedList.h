@@ -36,6 +36,7 @@ class LinkedList {
     Node *get(int index);
     bool set(int index, int value);
     void deleteNode(int index);
+    void reverse();
 };
 
 #endif
