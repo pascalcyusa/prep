@@ -43,14 +43,14 @@ int main() {
     demo(myList);
 
     // test get
-    std::cout << "\nValue at index " << &index << " is  "
+    std::cout << "\nValue at index 1 is "
               << myList->get(0)->value << std::endl;
 
     // test set
     std::cout << "\nSet value at 1 to 4: ";
-    myList->set(1, 4);
-    std::cout << "Value at index " << &index << " is now "
-              << myList->get(1)->value << std::endl;
+    myList->set(0, 4);
+    std::cout << "Value at index is now "
+              << myList->get(0)->value << std::endl;
     myList->print();
 
     return 0;
