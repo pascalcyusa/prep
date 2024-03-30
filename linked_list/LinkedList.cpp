@@ -7,11 +7,13 @@
 
 #include <iostream>
 
+// node constructor
 Node::Node(int value) {
     this->value = value;
     next = nullptr;
 }
 
+// linkedlist constructor
 LinkedList::LinkedList(int value) {
     Node *newNode = new Node(value);
     head = newNode;
@@ -19,6 +21,7 @@ LinkedList::LinkedList(int value) {
     length = 1;
 }
 
+// linkedlist destructor
 LinkedList::~LinkedList() {
     Node *temp = head;
     while (head) {
@@ -28,6 +31,7 @@ LinkedList::~LinkedList() {
     }
 }
 
+// add to the end of list
 void LinkedList::append(int value) {
     Node *newNode = new Node(value);
     if (length == 0) {
@@ -40,7 +44,18 @@ void LinkedList::append(int value) {
     length++;
 }
 
-void LinkedList::prepend(int value) {}
+// add to the front of list
+void LinkedList::prepend(int value) {
+    Node *newNode = new Node(value);
+    if (length == 0) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        newNode->next = head;
+        head = newNode;
+    }
+    length++;
+}
 
 bool LinkedList::insert(int value, int index) {}
 
@@ -62,4 +77,60 @@ int LinkedList::getHead() {
 
 int LinkedList::getTail() {
     return tail->value;
+}
+
+void LinkedList::deleteLast() {
+    // empty linked list
+    if (length == 0)
+        return;
+    // list with one element
+    Node *temp = head;
+    if (length == 1) {
+        head = nullptr;
+        tail = nullptr;
+    } else {
+        // normal circurmstances
+        Node *pre = head;
+        while (temp->next) {
+            pre = temp;
+            temp = temp->next;
+        }
+        tail = pre;
+        tail->next = nullptr;
+    }
+    delete temp;
+    length--;
+}
+
+void LinkedList::deleteFirst() {
+    if (length == 0)
+        return;
+    Node *temp = head;
+    if (length == 1) {
+        head = nullptr;
+        tail = nullptr;
+    } else {
+        head = head->next;
+    }
+    delete temp;
+    length--;
+}
+
+Node *LinkedList::get(int index) {
+    if (index < 0 or index >= length)
+        return nullptr;
+    Node *temp = head;
+    for (int i = 0; i < index; i++) {
+        temp = temp->next;
+    }
+    return temp;
+}
+
+bool LinkedList::set(int index, int value) {
+    Node *temp = get(index);
+    if (temp) {
+        temp->value = value;
+        return true;
+    }
+    return false;
 }

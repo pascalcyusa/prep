@@ -9,24 +9,49 @@
 
 #include "LinkedList.h"
 
+void demo(LinkedList *myList) {
+    std::cout << "Size: " << myList->size() << std::endl;
+    std::cout << "Head: " << myList->getHead() << std::endl;
+    std::cout << "Tail: " << myList->getTail() << std::endl;
+    std::cout << "Node(s): [ ";
+    myList->print();
+    std::cout << "]" << std::endl;
+}
+
 int main() {
     LinkedList *myList = new LinkedList(10);
-    std::cout << "Size: " << myList->size() << std::endl;
-    std::cout << "Head: " << myList->getHead() << std::endl;
-    std::cout << "Tail:" << myList->getTail() << std::endl;
-    std::cout << "Node(s): [ ";
-    myList->print();
-    std::cout << "]" << std::endl;
+    demo(myList);
 
-    // Append some values
-    myList->append(5);
+    // append some values
     myList->append(16);
-    std::cout << "Size: " << myList->size() << std::endl;
-    std::cout << "Head: " << myList->getHead() << std::endl;
-    std::cout << "Tail:" << myList->getTail() << std::endl;
-    std::cout << "Node(s): [ ";
+    std::cout << "\nAfter adding a value to the back: \n";
+    demo(myList);
+
+    // delete last
+    myList->deleteLast();
+    std::cout << "\nAfter deleting last value: \n";
+    demo(myList);
+
+    // prepend some values
+    myList->prepend(9);
+    std::cout << "\nAfter adding a value to the front: \n";
+    demo(myList);
+
+    // prepend some values
+    myList->deleteFirst();
+    std::cout << "\nAfter deleting first value: \n";
+    demo(myList);
+
+    // test get
+    std::cout << "\nValue at index " << &index << " is  "
+              << myList->get(0)->value << std::endl;
+
+    // test set
+    std::cout << "\nSet value at 1 to 4: ";
+    myList->set(1, 4);
+    std::cout << "Value at index " << &index << " is now "
+              << myList->get(1)->value << std::endl;
     myList->print();
-    std::cout << "]" << std::endl;
 
     return 0;
 }

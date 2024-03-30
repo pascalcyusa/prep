@@ -31,6 +31,10 @@ class LinkedList {
     int size();
     int getHead();
     int getTail();
+    void deleteLast();
+    void deleteFirst();
+    Node *get(int index);
+    bool set(int index, int value);
 };
 
 #endif
