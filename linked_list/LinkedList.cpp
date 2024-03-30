@@ -57,7 +57,24 @@ void LinkedList::prepend(int value) {
     length++;
 }
 
-bool LinkedList::insert(int value, int index) {}
+bool LinkedList::insert(int value, int index) {
+    if (index < 0 or index > length)
+        return false;
+    if (index == 0) {
+        prepend(value);
+        return true;
+    }
+    if (index == length) {
+        append(value);
+        return true;
+    }
+    Node *newNode = new Node(value);
+    Node *temp = get(index - 1);
+    newNode->next = temp->next;
+    temp->next = newNode;
+    length++;
+    return true;
+}
 
 void LinkedList::print() {
     Node *temp = head;

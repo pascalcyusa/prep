@@ -49,7 +49,12 @@ int main() {
     // test set
     std::cout << "\nSet value at index 0 to 4: ";
     myList->set(0, 4);
-    std::cout << "\nAfter settinf first value to 4: \n";
+    std::cout << "\nAfter setting first value to 4: \n";
+    demo(myList);
+
+    // test insert
+    std::cout << "\nInsert 1 at index 1: ";
+    myList->insert(1, 1);
     demo(myList);
 
     return 0;
