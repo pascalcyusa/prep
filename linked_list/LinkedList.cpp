@@ -151,3 +151,17 @@ bool LinkedList::set(int index, int value) {
     }
     return false;
 }
+
+void LinkedList::deleteNode(int index) {
+    if (index < 0 or index >= length)
+        return;
+    if (index == 0)
+        return deleteFirst();
+    if (index == length - 1)
+        return deleteLast();
+    Node *prev = get(index - 1);
+    Node *temp = prev->next;
+    prev->next = temp->next;
+    delete temp;
+    length--;
+}
