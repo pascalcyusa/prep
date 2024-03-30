@@ -62,7 +62,7 @@ int main() {
     demo(myList);
 
     // test reverse
-    for (int i = 1; 1 < 5; i++) {
+    for (int i = 1; i < 5; i++) {
         myList->append(i);
     }
     std::cout << "\nReversed list: \n";
