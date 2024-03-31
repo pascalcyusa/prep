@@ -4,21 +4,19 @@
  * Goldman Sachs Coding Challenge
  * Triangle Problem
  *
- * A triangle formed by the three points a (x1, y1, b(x2,y2) and (x3,y3) is a
+ * A triangle formed by the three points a(x1, y1) b(x2, y2) and c(x3, y3) is a
  * non degenerate triangle if the following rules are respected:
     |ab| + |bc| > |ac|
     |bc| + |ad| > |ab|
     |ab| + |ac| > |bc|
 
  * A point belongs to a triangle if it lies somewhere on or inside the triangle
- * Given two points p= (xp, yp) and q = (xq,yq), return the correct scenario
- * number:
-    0 If the triangle does not form a valid non-degerate triangle.
+ * Given two points p(xp, yp) and q(xq, yq) return the correct scenario number:
+    0 If the triangle does not form a valid non-degerate triangle
     1 if point p belongs but q does not
     2 if q belongs but p does not
     3 If both P and q belong
-    4 If neither p nor q belong to the triangle.
-
+    4 If neither p nor q belong to the triangle
 * Complete the function:
 * int pointBelong (int x1, int y1, int x2, int y2, int x3, int y3, int xp,
     int yp, int xq, int yq)
