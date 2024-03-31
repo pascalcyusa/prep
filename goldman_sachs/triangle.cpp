@@ -16,11 +16,12 @@
     0 If the triangle does not form a valid non-degerate triangle.
     1 if point p belongs but q does not
     2 if q belongs but p does not
-    3 If both P and q belong 4 If neither p nor q belong to the triangle.
+    3 If both P and q belong
+    4 If neither p nor q belong to the triangle.
 
 * Complete the function:
-* int pointBelong (int x1, int y1, int x2, int y2, int x3, int y3, int x4,
-    int y4, int xq, int yq)
+* int pointBelong (int x1, int y1, int x2, int y2, int x3, int y3, int xp,
+    int yp, int xq, int yq)
  */
 
 #include <cmath>
@@ -50,7 +51,7 @@ bool isDegenerate(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4
            distance(x1, y1, x2, y2) + distance(x1, y1, x3, y3) > distance(x2, y2, x3, y3);
 }
 
-int pointBelong(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4,
+int pointBelong(int x1, int y1, int x2, int y2, int x3, int y3, int xp, int yp,
                 int xq, int yq) {
     // triangle does not form a valid non-degerate triangle
     if (!isDegenerate(x1, y1, x2, y2, x3, y3, xq, yq)) {
@@ -58,17 +59,17 @@ int pointBelong(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4,
     }
     // else of p belongs but q does not
     else if (pointBelong(x1, y1, x2, y2, x3, y3, xq, yq) &&
-             !pointBelong(x1, y1, x2, y2, x3, y3, x4, y4)) {
+             !pointBelong(x1, y1, x2, y2, x3, y3, xp, yp)) {
         return 1;
     }
     // else of q belongs but p does not
     else if (!pointBelong(x1, y1, x2, y2, x3, y3, xq, yq) &&
-             pointBelong(x1, y1, x2, y2, x3, y3, x4, y4)) {
+             pointBelong(x1, y1, x2, y2, x3, y3, xp, yp)) {
         return 2;
     }
     // else of both belong
     else if (pointBelong(x1, y1, x2, y2, x3, y3, xq, yq) &&
-             pointBelong(x1, y1, x2, y2, x3, y3, x4, y4)) {
+             pointBelong(x1, y1, x2, y2, x3, y3, xp, yp)) {
         return 3;
     }
     // else of neither belong
