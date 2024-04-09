@@ -62,3 +62,18 @@ int HashTable::get(std::string key){
     }
     return 0;
 }
+
+// keys function
+std::vector<std::string> HashTable::keys(){
+    std::vector<std::string> allKeys;
+    for(int i=0; i<SIZE; i++){
+        if(dataMap[i]){
+            Node *temp = dataMap[i];
+            while(temp){
+                allKeys.push_back(temp->key);
+                temp = temp->next;
+            }
+        }
+    }
+    return allKeys;
+}

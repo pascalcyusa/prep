@@ -4,6 +4,8 @@
 
 int main(int argc, char *argv[]) {
     HashTable *myHashTable = new HashTable();
+
+    // test set function
     myHashTable->set("nails", 100);
     myHashTable->set("tile", 50);
     myHashTable->set("lumber", 80);
@@ -11,6 +13,16 @@ int main(int argc, char *argv[]) {
     myHashTable->set("screws", 140);
     myHashTable->printTable();
 
-    std::cout << "Lumber: " << myHashTable->get("lumber") << std::endl;
+    // test get function
+    std::cout << "\nLumber: " << myHashTable->get("lumber") << std::endl;
     std::cout << "Bolts: " << myHashTable->get("bolts") << std::endl;
+
+    // test keys function
+    std::vector<std::string> myKeys = myHashTable->keys();
+    std::cout << "\n=====Keys=====: ";
+    for (auto key : myKeys) {
+        std::cout << key << " ";
+    }
+
+    return 0;
 }

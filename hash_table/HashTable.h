@@ -2,6 +2,7 @@
 #define _HASHTABLE_H
 
 #include <string>
+#include <vector>
 
 class Node {
    public:
@@ -20,6 +21,7 @@ class HashTable {
     int hash(std::string key);
     void set(std::string key, int value);
     int get(std::string key);
+    std::vector<std::string> keys();
 };
 
 #endif
