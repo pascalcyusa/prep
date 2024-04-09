@@ -42,7 +42,7 @@ void HashTable::set(std::string key, int value){
         dataMap[index] == newNode;
     } else {
         Node *temp = dataMap[index];
-        while(temp->next){
+        while(temp->next != nullptr){
             temp = temp->next;
         }
         temp->next = newNode;
