@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
 
     // test get function
     std::cout << "\nGetting values..." << std::endl;
-    std::cout << "\nLumber: " << myHashTable->get("lumber") << std::endl;
+    std::cout << "Lumber: " << myHashTable->get("lumber") << std::endl;
     std::cout << "Bolts: " << myHashTable->get("bolts") << std::endl;
 
     // test keys function
