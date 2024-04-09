@@ -49,3 +49,16 @@ void HashTable::set(std::string key, int value){
         temp->next = newNode;
     }
 }
+
+// get function
+int HashTable::get(std::string key){
+    int index = hash(key);
+    Node *temp = dataMap[index];    
+    while(temp){
+        if(temp->key == key){
+            return temp->value;
+        }
+        temp = temp->next;
+    }
+    return 0;
+}
