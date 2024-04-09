@@ -7,6 +7,9 @@ class HashTable {
    private:
     static const int SIZE = 7;
     Node *dataMap[SIZE];
+
+   public:
+    void printTable();
 };
 
 class Node {
