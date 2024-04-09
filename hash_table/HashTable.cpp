@@ -13,11 +13,12 @@ Node::Node(std::string key, int value) {
 // printTable
 void HashTable::printTable(){
     for(int i=0; i<SIZE; i++){
-        std::cout << i << ":"<< std::endl;
+        std::cout << i << ":" << std::endl;
         if(dataMap[i]){
             Node *temp = dataMap[i];
             while(temp){
-                std::cout << "  {" << temp->key << ", " << temp->value << "}";
+                std::cout << "  {" << temp->key << ", " << temp->value << "}"
+                << std::endl;
                 temp=temp->next;
             }
         }
