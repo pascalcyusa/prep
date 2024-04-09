@@ -27,7 +27,7 @@ void HashTable::printTable(){
 // hash function
 int HashTable::hash(std::string key) {
     int hash=0;
-    for(int i=0; i<key.length(); i++){
+    for(int i=0; i<key.size(); i++){
         int asciiValue = int([i]);
         hash = (hash + asciiValue * 23) % SIZE;
     }
