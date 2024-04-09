@@ -40,7 +40,7 @@ void HashTable::set(std::string key, int value){
     int index = hash(key);
     Node* newNode = new Node(key, value);
     if(dataMap[index] ==  nullptr){
-        dataMap[index] == newNode;
+        dataMap[index] = newNode;
     } else {
         Node *temp = dataMap[index];
         while(temp->next){
@@ -48,21 +48,4 @@ void HashTable::set(std::string key, int value){
         }
         temp->next = newNode;
     }
-    // int index = hash(key);
-    // Node* current = dataMap[index];
-
-    // // If the key already exists, update its value
-    // while (current != nullptr) {
-    //     if (current->key == key) {
-    //         current->value = value;
-    //         return;
-    //     }
-    //     current = current->next;
-    // }
-
-    // // If the key doesn't exist, create a new node and add it to the beginning 
-    // // of the linked list
-    // Node* newNode = new Node(key, value);
-    // newNode->next = dataMap[index];
-    // dataMap[index] = newNode;
 }
