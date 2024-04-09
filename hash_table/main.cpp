@@ -10,4 +10,7 @@ int main(int argc, char *argv[]) {
     myHashTable->set("bolts", 200);
     myHashTable->set("screws", 140);
     myHashTable->printTable();
+
+    std::cout << "Lumber: " << myHashTable->get("lumber") << std::endl;
+    std::cout << "Bolts: " << myHashTable->get("bolts") << std::endl;
 }
