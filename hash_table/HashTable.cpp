@@ -37,32 +37,32 @@ int HashTable::hash(std::string key) {
 
 // set function
 void HashTable::set(std::string key, int value){
-    // int index = hash(key);
-    // Node *newNode = new Node(key, value);
-    // if(dataMap[index] ==  nullptr){
-    //     dataMap[index] == newNode;
-    // } else {
-    //     Node *temp = dataMap[index];
-    //     while(temp->next){
-    //         temp = temp->next;
-    //     }
-    //     temp->next = newNode;
-    // }
     int index = hash(key);
-    Node* current = dataMap[index];
-
-    // If the key already exists, update its value
-    while (current != nullptr) {
-        if (current->key == key) {
-            current->value = value;
-            return;
-        }
-        current = current->next;
-    }
-
-    // If the key doesn't exist, create a new node and add it to the beginning 
-    // of the linked list
     Node* newNode = new Node(key, value);
-    newNode->next = dataMap[index];
-    dataMap[index] = newNode;
+    if(dataMap[index] ==  nullptr){
+        dataMap[index] == newNode;
+    } else {
+        Node *temp = dataMap[index];
+        while(temp->next){
+            temp = temp->next;
+        }
+        temp->next = newNode;
+    }
+    // int index = hash(key);
+    // Node* current = dataMap[index];
+
+    // // If the key already exists, update its value
+    // while (current != nullptr) {
+    //     if (current->key == key) {
+    //         current->value = value;
+    //         return;
+    //     }
+    //     current = current->next;
+    // }
+
+    // // If the key doesn't exist, create a new node and add it to the beginning 
+    // // of the linked list
+    // Node* newNode = new Node(key, value);
+    // newNode->next = dataMap[index];
+    // dataMap[index] = newNode;
 }
