@@ -17,6 +17,8 @@ class HashTable {
 
    public:
     void printTable();
+    int hash(std::string key);
+    void set(std::string key, int value);
 };
 
 #endif

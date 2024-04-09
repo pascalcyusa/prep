@@ -9,6 +9,8 @@ Node::Node(std::string key, int value) {
     next = nullptr;
 }
 
+
+// printTable
 void HashTable::printTable(){
     for(int i=0; i<SIZE; i++){
         std::cout << i << ":"<< std::endl;
@@ -19,5 +21,30 @@ void HashTable::printTable(){
                 temp=temp->next;
             }
         }
+    }
+}
+
+// hash function
+int HashTable::hash(std::string key) {
+    int hash=0;
+    for(int i=0; i<key.length(); i++){
+        int asciiValue = int([i]);
+        hash = (hash + asciivalue * 23) % SIZE;
+    }
+    return hash;
+}
+
+// set function
+void HashTable::set(std::string key, int value){
+    int index = hash(key);
+    Node *newNode = new Node(key, value);
+    if(dataMap[index] ==  nullptr){
+        dataMap[index] == newNode;
+    } else {
+        Node *temp = dataMap[index];
+        while(temp->next){
+            temp = temp->next;
+        }
+        temp->next = newNode;
     }
 }
