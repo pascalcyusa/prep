@@ -3,6 +3,13 @@
 
 #include <string>
 
+class Node {
+   public:
+    std::string key;
+    int value;
+    Node *next;
+    Node(std::string key, int value);
+};
 class HashTable {
    private:
     static const int SIZE = 7;
@@ -10,14 +17,6 @@ class HashTable {
 
    public:
     void printTable();
-};
-
-class Node {
-   public:
-    std::string key;
-    int value;
-    Node *next;
-    Node(std::string key, int value);
 };
 
 #endif
