@@ -1,0 +1,45 @@
+There are N consecutive measurements (numbered from 0 to N-1) taken by a health 
+monitoring device. During the K-th measurement, the device recorded heartRate[K]
+and activityLevel|K (possible levels are "Low", "Normal" or "High").
+
+What is the largest difference between the highest and lowest values of the 
+heart rate during a single period of the same activity level?
+
+Write a function:
+
+int solution(vector<int> &heartRate, vector<string> &activityLevel);
+
+that, given an array of integers heartRate and an array of strings activityLevel, 
+both of length N, returns the largest difference between the highest and lowest 
+values of the heart rate during a single period of the same activity level.
+
+Examples:
+
+1. Assume that heartRate = [60, 100, 90, 80]
+and activityLevel = ["Low", "High", "High", "High"]. 
+There is only one measurement during the "Low" activity level, so its difference 
+is 0. There are three measurements during the "High" activity level, and the 
+difference between the highest and lowest heart rates equals 20. The function 
+should return 20.
+
+2. Assume that heartRate = [82, 120, 78, 61]
+and activityLevel = ["Normal", "High", "Normal", "Low"]. 
+All activity periods of the same level are of length 1, so the function should 
+return 0.
+
+3. For heartRate = [100, 87, 90, 90, 125]
+
+and activityLevel = ['"Normal", "Normal", "Normal", "High", "Low'], 
+the function should return 13.
+
+Assume that:
+
+◦ N is an integer within the range [1, 100];
+
+◦ each element of array heartRate is an integer within the range [40, 200];
+
+◦ each element of array activityLevel is a string that can have one of the 
+following values: Low, Normal, High.
+
+In your solution, focus on correctness. The performance of your solution will not
+be the focus of the assessment

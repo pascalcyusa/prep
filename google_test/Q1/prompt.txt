@@ -1,0 +1,59 @@
+A locker room is a place containing lockers where people can leave their 
+belongings and pick them up later. Lockers can be found, for example, in 
+changing rooms at the gym or in the sports hall. An automatic locker system has 
+been introduced in the locker room. When a client visits the room, the system 
+works as follows:
+◦ if the client has no locker assigned, the system assigns them a free locker 
+    with the lowest available number;
+
+◦ if the client has a locker assigned, the system opens and frees the locker. 
+    After this, the locker can be reassigned to another client.
+
+Lockers are numbered from 1. At the beginning of the day, all lockers are free.
+The locker room is visited N times. Which locker was the last one assigned to 
+some client?
+
+Write a function:
+
+int solution (vector<string> &clients);
+
+that, given an array clients consisting of N strings of client names, 
+representing the order in which the clients visited the locker room, returns the
+number of the last assigned locker.
+
+Examples:
+
+1. For clients = ["Alice", "Eve", "Bob", "Eve", "Carl", "Alice"],
+the following events happened:
+
+◦ locker 1 was assigned to Alice;
+
+◦ locker 2 was assigned to Eve;
+
+◦ locker 3 was assigned to Bob;
+
+◦ Eve freed locker 2;
+
+◦ locker 2 was assigned to Carl;
+
+◦ Alice freed locker 1.
+
+The last locker was assigned to Carl, so the function should return 2.
+
+2. For clients = ["Alice", "Bob", "Bobby"], 
+the function should return 3.
+
+3. For clients = ["Bob", "bob", "BoB", "bob", "BOB"], 
+the function should return 2, because lowercase letters should be distinguished 
+from uppercase letters.
+
+4. For clients = ["Alice", "Alice", "Bob", "Alice], the function should return 2.
+
+Assume that:
+
+◦ N is an integer within the range [3..300];
+
+◦ each string in the array clients consists of at most 20 English letters (A'-Z, 'a'-z').
+
+In your solution, focus on correctness. The performance of your solution will 
+not be the focus of the assessment.
